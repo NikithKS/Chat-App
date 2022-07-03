@@ -1,4 +1,5 @@
 import express from 'express';
+import {messageRouter} from "./api/messageRoutes.js";
 
 const msgApp = express()
 
@@ -11,6 +12,4 @@ msgApp.listen(8088, () => {
 })
 
 
-msgApp.use('/', ((req, res, next) => {
-  return res.status(200).json({'messsage': 'works'});
-}))
+msgApp.use(messageRouter);
