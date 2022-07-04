@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
 import {messages} from "./models/messages.js";
+import envData from "envData.json";
 
-const DbUrl = "mongodb+srv://niki:pass123@cluster0.xmtqe.mongodb.net/?retryWrites=true&w=majority";
+const DbUrl = envData.DbUrl;
 
 const connectToMessageDb = async function () {
   await mongoose.connect(DbUrl).then(r => console.log("Messages DB connected"));

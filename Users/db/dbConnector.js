@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
+import envData from "../../envData.json";
 
-const DbUrl = "mongodb+srv://niki:pass123@cluster0.xmtqe.mongodb.net/?retryWrites=true&w=majority";
-
+const DbUrl = envData.DbUrl;
 const connectToUserDb = async function () {
   if (mongoose.connection.readyState !== 1) {
     console.log('State: ' + mongoose.connection.readyState);
